@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">📋 Claim Management</div>
+        <div class="navbar-links">
+            <a href="index.html" class="nav-link">Client Portal</a>
+            <a href="login.html" class="nav-link">Admin Login</a>
+            <button class="btn btn-danger" style="margin-left:8px; padding: 6px 16px; font-size:13px;" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>🛠️ Admin Dashboard</h1>
+        <p class="subtitle">Manage and review all submitted claims</p>
+
+        <div class="filters">
+            <button class="btn btn-secondary" onclick="loadClaims('ALL')">All</button>
+            <button class="btn btn-warning"   onclick="loadClaims('PENDING')">Pending</button>
+            <button class="btn btn-success"   onclick="loadClaims('APPROVED')">Approved</button>
+            <button class="btn btn-danger"    onclick="loadClaims('REJECTED')">Rejected</button>
+            <button class="btn btn-secondary" onclick="loadClaims('UNDER_REVIEW')">Under Review</button>
+        </div>
+
+        <div class="search-box" style="margin-bottom: 20px;">
+            <input type="text" id="searchInput" placeholder="🔍 Search by claimant name..." style="width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px;">
+        </div>
+
+        <div id="claimsContainer"></div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
